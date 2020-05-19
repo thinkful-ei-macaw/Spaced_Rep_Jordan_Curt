@@ -5,6 +5,7 @@ body {
   font-family: 'Work Sans';
 }
 
+
 main {
   max-width: 800px;
   margin-left: auto;
@@ -63,11 +64,11 @@ a:visited {
   text-align: left;
   display: flex;
   margin-bottom: 5px;
-  width: 80%;
+  width: 100%;
 }
 
 .inputLabel {
-  width: em;
+  width: 10em;
   margin: 0;
   padding: 7px 15px;
   border-radius: 4px 0 0 4px;

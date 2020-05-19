@@ -6,11 +6,24 @@ import IdleService from '../services/idle-service'
 const UserContext = React.createContext({
   user: {},
   error: null,
-  setError: () => {},
+  language: null, 
+  words: null, 
+  nextWord: {},
+  totalScore: null, 
+  currentWord: {},
+  guess: null,
+
   clearError: () => {},
   setUser: () => {},
-  processLogin: () => {},
+  setWords: () => {},
+  setLanguage: () => {},
+  setGuess: () => {},
+  setError: () => {},
+  setCurrentWord: () => {},
+  setNextWord: () => {},
+  processLogin:() => {},
   processLogout: () => {},
+  setTotalScore: () => {}
 })
 
 export default UserContext
@@ -47,6 +60,20 @@ export class UserProvider extends Component {
     TokenService.clearCallbackBeforeExpiry()
   }
 
+ setGuess = guess => {
+    this.setState({guess})
+  }
+
+ setNextWord = nextWord => {
+    this.setState({nextWord})
+  }
+
+  setCurrentWord = currentWord => {
+    this.setState({currentWord})
+  }
+  setTotalScore = totalScore => {
+    this.setState({totalScore})
+  }
   setError = error => {
     console.error(error)
     this.setState({ error })
@@ -56,8 +83,16 @@ export class UserProvider extends Component {
     this.setState({ error: null })
   }
 
+  setLanguage = (language) => {
+    this.setState({language})
+  }
+
   setUser = user => {
     this.setState({ user })
+  }
+
+  setWords = (words) => {
+    this.setState({words})
   }
 
   processLogin = authToken => {
@@ -103,13 +138,24 @@ export class UserProvider extends Component {
 
   render() {
     const value = {
-      user: this.state.user,
-      error: this.state.error,
-      setError: this.setError,
-      clearError: this.clearError,
-      setUser: this.setUser,
-      processLogin: this.processLogin,
-      processLogout: this.processLogout,
+     language: this.state.language,
+     error: this.state.error,
+     user: this.state.user,
+     nextWord: this.state.nextWord,
+     setCurrentWord: this.state.setCurrentWord,
+     words: this.state.words,
+     totalScore: this.state.totalScore,
+     guess: this.state.guess,
+     setGuess: this.setGuess,
+     setWords: this.setWords,
+     setLanguage: this.setLanguage,
+     setError: this.setError,
+     clearError: this.clearError,
+     setUser: this.setUser,
+     setNextWord: this.setNextWord,
+     processLogin: this.processLogin,
+     processLogout: this.processLogout,
+     setTotalScore: this.setTotalScore
     }
     return (
       <UserContext.Provider value={value}>

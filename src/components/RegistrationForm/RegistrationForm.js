@@ -40,14 +40,16 @@ class RegistrationForm extends Component {
   render() {
     const { error } = this.state
     return (
-      <form
+      <div className="formContainer">
+        <h2>Sign up</h2>
+      <form className="inputForm"
         onSubmit={this.handleSubmit}
       >
         <div role='alert'>
           {error && <p>{error}</p>}
         </div>
-        <div>
-          <Label htmlFor='registration-name-input'>
+        <div className="formField">
+          <Label className="inputLabel" htmlFor='registration-name-input'>
             Enter your name<Required />
           </Label>
           <Input
@@ -55,20 +57,22 @@ class RegistrationForm extends Component {
             id='registration-name-input'
             name='name'
             required
+            className= "inputField"
           />
         </div>
-        <div>
-          <Label htmlFor='registration-username-input'>
+        <div className="formField">
+          <Label className="inputLabel" htmlFor='registration-username-input'>
             Choose a username<Required />
           </Label>
           <Input
             id='registration-username-input'
             name='username'
             required
+            className="inputField"
           />
         </div>
-        <div>
-          <Label htmlFor='registration-password-input'>
+        <div className="formField">
+          <Label className="inputLabel" htmlFor='registration-password-input'>
             Choose a password<Required />
           </Label>
           <Input
@@ -76,16 +80,18 @@ class RegistrationForm extends Component {
             name='password'
             type='password'
             required
+            className= "inputField"
           />
         </div>
         <footer>
-          <Button type='submit'>
+          <Button className="btn btn-register" type='submit'>
             Sign up
           </Button>
           {' '}
           <Link className="accountLink"to='/login'>Already have an account?</Link>
         </footer>
       </form>
+      </div>
     )
   }
 }

@@ -31,25 +31,29 @@ class Header extends Component {
   renderLoginLink() {
     return (
       <nav>
-        <Link to='/login'>Login</Link>
+        <Link className="navLink" to='/login'>Login</Link>
         {' '}
-        <Link to='/register'>Sign up</Link>
+        <Link className="navLink"to='/register'>Sign up</Link>
       </nav>
     )
   }
 
   render() {
     return (
-      <header>
+      <header role="navigation">
+        <div className="flex header-content">
         <h1>
-          <Link to='/'>
+          <Link to='/' className="navLink headerTitle">
             Spaced repetition
           </Link>
         </h1>
+        <div id="logo"></div>
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()}
+          </div>
       </header>
+      
     );
   }
 }

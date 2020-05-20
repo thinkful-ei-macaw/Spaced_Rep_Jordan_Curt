@@ -33,6 +33,7 @@ export default class App extends Component {
               path={'/'}
               component={DashboardRoute}
             />
+            
             <PrivateRoute
               path={'/learn'}
               component={LearningRoute}

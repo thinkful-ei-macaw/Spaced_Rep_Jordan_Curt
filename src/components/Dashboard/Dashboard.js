@@ -26,7 +26,7 @@ state = {
 }
 
 
-  static contextType = UserContext;
+  static contextType = UserContext
 
   componentDidMount () {
     return fetch(`${config.API_ENDPOINT}/language`, 
@@ -36,8 +36,8 @@ state = {
   })
   .then(res => res.json())
   .then(res => {
-    this.context.setLanguage(res.language())
-    this.context.setWords(res.words())
+    this.context.setLanguage(res.language)
+    this.context.setWords(res.words)
   })
   .catch(err => this.setState({error:err}))
 }

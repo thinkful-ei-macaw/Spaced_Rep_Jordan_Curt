@@ -11,7 +11,7 @@ const UserContext = React.createContext({
   nextWord: {},
   totalScore: null, 
   currentWord: {},
-  guess: null,
+  guess: false,
 
   clearError: () => {},
   setUser: () => {},

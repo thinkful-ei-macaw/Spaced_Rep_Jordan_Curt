@@ -1,6 +1,6 @@
-import React, {
-  Component
+import React, {Component
 } from 'react';
+import LanguageApiService from '../services/language-api-service';
 
 const LanguageContext = React.createContext({
   language: {},
@@ -19,6 +19,7 @@ const LanguageContext = React.createContext({
 export default LanguageContext;
 
 export class LangProvider extends Component {
+ 
   constructor(props) {
     super(props);
     const state = {
@@ -27,6 +28,15 @@ export class LangProvider extends Component {
       words: []
     };
     this.state = state;
+  }
+
+  componentDidMount() {
+   
+    LanguageApiService.getHead()
+      .then(res => {
+        
+        this.setHead(res)
+      })
   }
 
     setLanguage = language => {
@@ -41,6 +51,7 @@ export class LangProvider extends Component {
   
 
   setHead = head => {
+   
     this.setState({head})
   }
 
@@ -64,8 +75,8 @@ render() {
     setLanguage: this.setLanguage, 
     setWords: this.setWords, 
     setHead: this.setHead, 
-    setGuess: this.state.guess,
-    setResponse: this.state.response
+    setGuess: this.setGuess,
+    setResponse: this.setResponse
   }
   return (
     <LanguageContext.Provider value={value}>

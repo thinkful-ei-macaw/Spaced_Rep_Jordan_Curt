@@ -14,4 +14,4 @@ This app helps you learn Spanish by giving you words to practice using the space
 
 * This app is built on React using HTML, CSS, and Javascript.
 * It makes use of linked lists to manage the order in which words are presented. 
-* Built to interact with this apps [API] (https://github.com/thinkful-ei-macaw/Spaced_Rep_API_Jordan)
+* Built to interact with an [API] (https://github.com/thinkful-ei-macaw/Spaced_Rep_API_Jordan)

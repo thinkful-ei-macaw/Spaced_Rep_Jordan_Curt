@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-// import UserContext from '../../contexts/UserContext'
-import LanguageApiService from '../../services/language-api-service'
+import LanguageApiService from '../../services/language-api-service';
 import LanguageContext from '../../contexts/LanguageContext';
+import './Learn.css';
 
 
 class Learn extends Component {
@@ -28,6 +28,7 @@ class Learn extends Component {
    
 
   handleNextWord = () => {
+   this.context.setGuess('')
   this.context.setHead(this.context.response)
        this.setState({formIsRendered: true});
 
@@ -39,10 +40,11 @@ class Learn extends Component {
    let language = this.context.language || {};
 
   return (
-    <div>
+    <div className="learn-page">
       <h2>Translate the word:</h2>
       <span>{!response.nextWord ? head.nextWord : response.nextWord}</span>
      <form onSubmit={e => this.handleSubmitForm(e)}>
+       <fieldset>
         <label htmlFor="learn-guess-input">What's the translation for this word?</label>
         <input
         id="learn-guess-input" 
@@ -57,17 +59,18 @@ class Learn extends Component {
           }
            required
        />
-        <button type="submit">Submit your answer</button>
+        <button type="submit" className="btn">Submit your answer</button>
+        </fieldset>
       </form>
          <div className="DisplayScore">
       <p>Your total score is:{' '}
       {!response.totalScore ? head.totalScore : response.totalScore}
       </p>
         </div>
-      <p>
+      <p className="word-count">
       You have answered this word correctly {head.wordCorrectCount} times.
       </p>
-      <p>
+      <p className="word-count">
       You have answered this word incorrectly {head.wordIncorrectCount} times.
       </p>
       
@@ -81,7 +84,8 @@ renderResponse = () => {
   let response = this.context.response || {};
   return (
     <>
-    <h2>
+    <div className="feedback-page">
+    <h2 className="feedback">
       {response.isCorrect === true ? 'You were correct! :D': 'Good try, but not quite right :('}
     </h2>
     <div className="DisplayScore">
@@ -90,7 +94,7 @@ renderResponse = () => {
     
   
      
-      <div className="DisplayFeedback hide-offset">
+      <div className="DisplayFeedback">
         <p>
           The correct translation for {head.nextWord} was {response.answer}{' '} 
           and you chose {this.context.guess}!
@@ -98,6 +102,7 @@ renderResponse = () => {
       </div>
       <button onClick={this.handleNextWord} className={response.isCorrect ? 'correct-button next-button'
        : 'wrong-button next-button'}>Try another word!</button>
+       </div>
     </>
   );
 }

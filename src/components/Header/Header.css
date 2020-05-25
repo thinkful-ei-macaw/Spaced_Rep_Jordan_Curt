@@ -2,7 +2,11 @@ header {
   padding: 20px;
   background-color: #e9f0ff;
   color: #505e6b;
-  border-bottom: 10px solid #8d9ea6;
+  border-bottom: 10px solid #8d9ea6;  
+}
+
+header h1 {
+  font-weight: 900;
 }
 
 nav {
@@ -19,23 +23,40 @@ nav p {
   overflow: hidden;
 }
 
-nav span {
-  padding: 0 .75em
-}
+nav span {padding: 0 .75em}
 
 .flex {
   display: flex;
 }
 
-.header-content {
-  justify-content: space-between;
-  align-items: center;
-  max-width: 65em;
-  margin: 0 auto;
+.userName {
+  justify-content:  center;
+  text-align: left;
+
 }
 
-.header-content>* {
-  flex: 3
+header .links {
+margin-top: 1em;
+display: flex;
+align-items: center;
+justify-content: space-around;
+}
+
+.header-content >* {
+  flex: 3;
+}
+
+.header-content {
+  align-items: center;  
+  margin: 0 auto;
+  max-width: 65em;
+  justify-content: space-between;
+}
+
+.navLogout {
+  border: 3px solid #d4ddd3;
+  padding: .5em 1em;
+  border-radius: 5px;
 }
 
 .navLink {
@@ -53,13 +74,12 @@ nav span {
 
 .headerTitle {
   font-size: .75em;
-  max-width: 7em;
+ max-width: 7em;
 }
 
 #logo {
   width: 3em;
   height: 3em;
-  background-image: url('/img/norway.png');
   background-size: 15% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -67,8 +87,8 @@ nav span {
 
 @media only screen and (max-width: 425px) {
 
-  nav span,
-  #logo {
+  nav span
+   {
     display: none;
   }
 

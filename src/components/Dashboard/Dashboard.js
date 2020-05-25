@@ -14,7 +14,7 @@ function WordsRow (props) {
       <h4>{props.word.original}</h4>
       <div>
         <span>Your correct answer count: {props.word.correct_count}</span>
-  <span>Your incorrect answer count: {props.word.incorrect_count}</span>
+        <span>Your incorrect answer count: {props.word.incorrect_count}</span>
       </div>
     </li>
   )
@@ -47,23 +47,23 @@ state = {
     words.forEach((word, key) => {
       result.push(<WordsRow key={key} word={word}/>)
     })
-  return <ul>{result}</ul>
+  return <ul className="word-list">{result}</ul>
   }
 
 
   render() {
     const jsx = <>
-    <h2>{this.context.language ? this.context.language.name: null}</h2>
+    <h2 className="full-header">{this.context.language ? this.context.language.name: null}</h2>
 
       <Link to='/learn'>
-        <Button>Start practicing</Button>
+        <Button className="btn btn-learn">Start practicing</Button>
       </Link>
     <h3>Words to practice</h3>
     <div> 
       {this.context.words ? this.createList(this.context.words) : null}
     </div>
     <div>
-      <h4>{this.context.language ? `Total correct answers: ${this.context.language.total_score}`: null}</h4>
+      <h4 className="total-correct">{this.context.language ? `Total correct answers: ${this.context.language.total_score}`: null}</h4>
     </div>
     </>
    return jsx;

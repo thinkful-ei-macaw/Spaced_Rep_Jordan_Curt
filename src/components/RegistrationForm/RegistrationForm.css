@@ -24,27 +24,20 @@
 .accountLink {
   margin-top: 1.75em;
   font-size: 0.9em;
-  color: #ececec !important;
+  color: black !important;
   text-align: right;
 }
 
-
+/* 
 .tagline {
   display: flex;
-  flex: 1;
-  align-items: center;
-  font-size: 1.5em;
-  text-align: left;
-  padding: 0 2em;
-  flex-basis: 7em;
-  color: #fff;
-}
+
+} */
 
 .registration-container .formContainer {
   flex: 2;
   flex-basis: 25em;
 }
-
 
 @media only screen and (max-width: 760px) {
   .tagline {

@@ -1,16 +1,23 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: blue;
-  font-family: 'Work Sans';
+.App {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 
+/* body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: 'Work Sans';
+  
+} */
+
 main {
-  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+
 }
 
 h1 {
@@ -19,13 +26,14 @@ h1 {
 }
 
 h2 {
-  margin: 1em 0 0.25em;
+  margin: 20px 0 0;
+  text-align: center;
   font-size: 2.5em;
-  color: #f7f7f7;
+  color: black;
 }
 
 h3 {
-  margin: 3em auto 1em;
+  margin: 1.5em auto 1em;
   padding: 0 0 0.75em;
   max-width: 80%;
   border-bottom: 1px solid #5366c5;
@@ -48,15 +56,15 @@ a:visited {
   padding: 3em;
   display: flex;
   flex-wrap: wrap;
+  border: 2px dashed red;
 }
 
 .formContainer {
   display: flex;
+  padding: 10px;
   justify-content: center;
   flex-direction: column;
 }
-
-
 
 .formField {
   margin: 1.2em 0 0 0;
@@ -65,10 +73,11 @@ a:visited {
   display: flex;
   margin-bottom: 5px;
   width: 100%;
+  /* border: 2px red dashed; */
 }
 
 .inputLabel {
-  width: 10em;
+  width: 8em;
   margin: 0;
   padding: 7px 15px;
   border-radius: 4px 0 0 4px;
@@ -89,13 +98,12 @@ a:visited {
   font-size: 1.2em;
   font-weight: bold;
   background: transparent;
-  color: #f7f7f7;
   transition: all .25s;
 }
 
 .inputField:focus {
   border-color: #f7f7f7;
-  background-color: #51679c;
+  background-color: #e9f0ff;
   outline: none;
 }
 
@@ -105,9 +113,10 @@ a:visited {
 }
 
 .btn {
+  
   margin: 1em 0 0;
   padding: 10px 20px;
-  background-color: #78c800;
+  background-color: #e9f0ff;
   color: #4a4a4a;
   border: 0;
   border-radius: 3px;
@@ -120,8 +129,8 @@ a:visited {
 }
 
 .btn:hover {
-  background-color: #fff5d9;
-  box-shadow: 10px 11px 0px 1px #78c800;
+  background-color: #e9f0ff;
+  box-shadow: 10px 11px 0px 1px #8d9ea6;
 }
 
 .alert-danger {
@@ -134,6 +143,10 @@ a:visited {
   opacity: 0;
 }
 
+.alert-danger {
+  color: #ca1111;
+  padding: 0.3em;
+}
 
 
 @media only screen and (max-width: 425px) {
